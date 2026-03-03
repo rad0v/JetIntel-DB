@@ -77,3 +77,8 @@ async def get_jets():
     for jet in jets:
         jet["_id"] = str(jet["_id"])
     return jets
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
