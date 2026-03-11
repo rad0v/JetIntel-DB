@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from routes.auth import router as auth_router
 from routes.jets import router as jets_router
 from routes.recommend import router as recommend_router
+from routes.admin import router as admin_router
 
 app = FastAPI(
     title="JetIntel API",
@@ -27,6 +28,7 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(jets_router)
 app.include_router(recommend_router)
+app.include_router(admin_router)
 
 
 @app.get("/", tags=["Health"])
